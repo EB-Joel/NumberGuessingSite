@@ -1,6 +1,6 @@
 import React from 'react';
 import 'tachyons';
-import TextBox from './TextBox';
+
 
 
 class App extends React.Component {
@@ -8,7 +8,7 @@ class App extends React.Component {
         return(
         <div className='tc'>
             <h1 className='f1'>Guess a number from 1-10</h1>
-            <TextBox />
+            
         </div>
             );
     }
