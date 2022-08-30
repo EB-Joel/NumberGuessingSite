@@ -28,7 +28,7 @@ class NumberForm extends React.Component{
                 </label>
                 <button className="btn btn-primary" onClick={this.formSubmitted}>submit</button>
             </form>
-        )
+        );
     }
 
 }

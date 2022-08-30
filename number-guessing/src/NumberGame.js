@@ -1,7 +1,7 @@
 import React from "react";
-import NumberForm from "./NumberForm";
+// import NumberForm from "./NumberForm";
 import "tachyons";
-
+import GameLogic from "./GameLogic";
 
 class NumberGame extends React.Component{
     constructor(props){
@@ -19,8 +19,7 @@ class NumberGame extends React.Component{
     render(){
         return (
             <div className='tc'>
-                <h1> <NumberForm formSubmit={this.handleForm} /></h1>
-               console.log({this.state.guess})
+                <h1>testing <GameLogic /></h1>
             </div>
         );
     }
