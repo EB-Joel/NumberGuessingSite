@@ -3,6 +3,18 @@ import NumberForm from "./NumberForm";
 
 const answer =Math.floor(Math.random()*10)+1;
 
+ function gameStart(x){
+        while (this.state.data.guess !== answer) {
+            if (this.state.data.guess !== answer) {
+               console.log('idk')
+                return "you guessed incorrectly, try again";
+            }else{
+                
+                return "you guessed corrrectly, Congratulations";
+            }
+    }
+}
+
 
 
 class GameLogic extends React.Component{
@@ -13,28 +25,19 @@ class GameLogic extends React.Component{
             guess:undefined}
         }
         this.handleGuess = this.handleGuess.bind(this)
+       
     }
-    gameStart(){
-        while (this.state.guess !== answer) {
-            if (this.state.guess !== answer) {
-                this.setState({...this.state.data, value:true});
-                return "you guessed incorrectly, try again";
-            }else{
-                this.setState({...this.state.data, value:true});
-                return "you guessed corrrectly, Congratulations";
-            }
-    }
-}
+   
      
     handleGuess(formSubmit){
-        this.setState({...this.state.data, guess:formSubmit});
+        this.setState({ guess:formSubmit});
     }
 
     render(){
         return(
             <div>
                <h1> <NumberForm formSubmit={this.handleGuess} /> </h1>
-               <p>{this.gameStart}</p>
+               <p>this{gameStart}, </p>
                <p> testing {answer}</p>
             </div>
         );

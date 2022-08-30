@@ -1,29 +1,58 @@
 import React from "react";
-// import NumberForm from "./NumberForm";
 import "tachyons";
-import GameLogic from "./GameLogic";
+import NumberForm from "./NumberForm";
+
+
+const answer =Math.floor(Math.random()*10)+1;
+
+// function gameStart(){
+//         if (this.state.guess !== answer) {
+//            console.log('idk')
+//             return "you guessed incorrectly, try again";
+//         }else{
+            
+//             return "you guessed corrrectly, Congratulations";
+//         }
+// }
 
 class NumberGame extends React.Component{
     constructor(props){
     super(props);
-    this.state ={guess: undefined};
+    this.state ={guess: 0};
 
     this.handleForm = this.handleForm.bind(this);
+    this.handleChange= this.handleChange.bind(this);
 
     }
 
-    handleForm(formguess){
-        this.setState({guess: formguess});
+    gameStart(x){
+            if (x == answer) {
+                alert("you guessed Right!, try Congratulations");
+            }else if (x != answer){
+                alert("you guessed Incorrrectly, ") ;
+            }
+    }
+
+    handleChange(event){
+        this.setState({guess:event});
+    }
+
+    handleForm(formSubmit){
+        this.setState({guess: formSubmit});
+        this.gameStart(this.state.guess);
     }
    
     render(){
         return (
             <div className='tc'>
-                <h1>testing <GameLogic /></h1>
+                <h1>testing <NumberForm formSubmit={this.handleForm} formChange={this.handleChange} /></h1>
+                <p>testing{this.state.guess}, correct answer{answer}</p>
+                <h3>hmm</h3>
             </div>
         );
     }
 }
+
 
 
 export default NumberGame;

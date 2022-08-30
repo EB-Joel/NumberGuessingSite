@@ -3,7 +3,7 @@ import React from "react";
 class NumberForm extends React.Component{
     constructor(props){
         super(props)
-        this.state ={value:undefined}
+        this.state ={value:0}
 
         this.formSubmitted = this.formSubmitted.bind(this);
         this.handleChange = this.handleChange.bind(this);
@@ -11,12 +11,14 @@ class NumberForm extends React.Component{
     }
 
     formSubmitted(numguess){
-        this.props.formSubmit(this.state.value);
         numguess.preventDefault();
+        this.props.formSubmit(this.state.value);
+        
     }
 
     handleChange(event){
         this.setState({value: event.target.value});
+        this.props.formChange(this.state.value);
     }
 
     render(){
