@@ -5,16 +5,6 @@ import NumberForm from "./NumberForm";
 
 const answer =Math.floor(Math.random()*10)+1;
 
-// function gameStart(){
-//         if (this.state.guess !== answer) {
-//            console.log('idk')
-//             return "you guessed incorrectly, try again";
-//         }else{
-            
-//             return "you guessed corrrectly, Congratulations";
-//         }
-// }
-
 class NumberGame extends React.Component{
     constructor(props){
     super(props);
@@ -39,15 +29,16 @@ class NumberGame extends React.Component{
 
     handleForm(formSubmit){
         this.setState({guess: formSubmit});
-        this.gameStart(this.state.guess);
+        setTimeout(()=>{
+            this.gameStart(this.state.guess);
+    },10) 
     }
-   
+
     render(){
         return (
             <div className='tc'>
                 <h1>testing <NumberForm formSubmit={this.handleForm} formChange={this.handleChange} /></h1>
-                <p>testing{this.state.guess}, correct answer{answer}</p>
-                <h3>hmm</h3>
+                <p>testing state:{this.state.guess},correct answer{answer}</p>
             </div>
         );
     }
