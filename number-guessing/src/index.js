@@ -4,14 +4,17 @@ import NumberGame from './NumberGame';
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
 import "tachyons";
+import './style.css';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <NumberGame />
-    
-  </React.StrictMode>
+  <div className='bruh'>
+    <React.StrictMode>
+      <NumberGame />
+      
+    </React.StrictMode>
+  </div>
 );
 
 // If you want to start measuring performance in your app, pass a function
