@@ -9,7 +9,7 @@ import './style.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <div className='bruh'>
+  <div className=''>
     <React.StrictMode>
       <NumberGame />
       
